@@ -1,29 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   newZombie.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: user42 <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/07 16:06:31 by user42            #+#    #+#             */
-/*   Updated: 2022/03/08 14:56:40 by user42           ###   ########.fr       */
+/*   Created: 2022/03/07 23:53:37 by user42            #+#    #+#             */
+/*   Updated: 2022/03/08 12:30:59 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#include "Zombie.hpp"
 
-# include "Contact.hpp"
-
-class PhoneBook
+Zombie* newZombie(std::string name)
 {
-	public:
-		PhoneBook(void);
-		~PhoneBook(void);
-		
-		int	start(void);
-
-		Contact	repertory[8];
-};
-
-#endif
+	Zombie* zombie = new Zombie(name);
+	return (zombie);
+}

@@ -1,29 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: user42 <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/07 16:06:31 by user42            #+#    #+#             */
-/*   Updated: 2022/03/08 14:56:40 by user42           ###   ########.fr       */
+/*   Created: 2022/03/08 14:44:50 by user42            #+#    #+#             */
+/*   Updated: 2022/03/08 14:46:12 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
-
-# include "Contact.hpp"
-
-class PhoneBook
+int	main(void)
 {
-	public:
-		PhoneBook(void);
-		~PhoneBook(void);
-		
-		int	start(void);
-
-		Contact	repertory[8];
-};
-
-#endif
+	return (0);
+}

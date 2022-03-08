@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: user42 <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/07 16:06:31 by user42            #+#    #+#             */
-/*   Updated: 2022/03/08 14:56:40 by user42           ###   ########.fr       */
+/*   Created: 2022/03/08 13:51:19 by user42            #+#    #+#             */
+/*   Updated: 2022/03/08 14:22:21 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#include "Zombie.hpp"
 
-# include "Contact.hpp"
-
-class PhoneBook
+int	main(void)
 {
-	public:
-		PhoneBook(void);
-		~PhoneBook(void);
-		
-		int	start(void);
-
-		Contact	repertory[8];
-};
-
-#endif
+	Zombie* horde;
+	horde = zombieHorde(8, "Toto");
+	for (int i = 0 ; i < 8 ; i++)
+		horde[i].announce();
+	delete [] horde;
+	return (0);
+}

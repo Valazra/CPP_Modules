@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: user42 <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/07 16:06:31 by user42            #+#    #+#             */
-/*   Updated: 2022/03/08 14:56:40 by user42           ###   ########.fr       */
+/*   Created: 2022/03/07 23:52:32 by user42            #+#    #+#             */
+/*   Updated: 2022/03/08 13:31:22 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#include "Zombie.hpp"
 
-# include "Contact.hpp"
-
-class PhoneBook
+int	main(void)
 {
-	public:
-		PhoneBook(void);
-		~PhoneBook(void);
-		
-		int	start(void);
+	Zombie Popo("Popo");
+	Popo.announce();
 
-		Contact	repertory[8];
-};
+	Zombie Roro("Roro");
+	Roro.announce();
 
-#endif
+	Zombie* Toto = newZombie("Toto");
+	Toto->announce();
+	delete Toto;
+
+	Zombie* Lolo = new Zombie("Lolo");
+	Lolo->announce();
+	delete Lolo;
+
+	randomChump("Coco");
+
+	return (0);
+}

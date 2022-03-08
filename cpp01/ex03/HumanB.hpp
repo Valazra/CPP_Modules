@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: user42 <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/07 16:06:31 by user42            #+#    #+#             */
-/*   Updated: 2022/03/08 14:56:40 by user42           ###   ########.fr       */
+/*   Created: 2022/03/08 14:52:34 by user42            #+#    #+#             */
+/*   Updated: 2022/03/08 15:00:14 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#ifndef HUMANB_HPP
+# define HUMANB_HPP
 
-# include "Contact.hpp"
+# include "Weapon.hpp"
 
-class PhoneBook
+class HumanB
 {
-	public:
-		PhoneBook(void);
-		~PhoneBook(void);
-		
-		int	start(void);
+	public :
+		HumanB(std::string name);
+		~HumanB(void);
+		void	attack(void);
 
-		Contact	repertory[8];
+	private :
+		Weapon		_weapon;
+		std::string	_name;
 };
 
 #endif

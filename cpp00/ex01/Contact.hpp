@@ -6,12 +6,12 @@
 /*   By: user42 <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 16:10:18 by user42            #+#    #+#             */
-/*   Updated: 2022/03/07 23:40:34 by user42           ###   ########.fr       */
+/*   Updated: 2022/03/08 14:56:31 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_H
-# define CONTACT_H
+#ifndef CONTACT_HPP
+# define CONTACT_HPP
 
 # include <iostream>
 

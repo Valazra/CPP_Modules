@@ -1,4 +1,4 @@
-NAME = ex00
+NAME = ex01
 
 COMPILER = clang++
 
@@ -6,7 +6,7 @@ FLAGS = -Wall -Wextra -Werror -std=c++98
 
 INCS = Zombie.hpp
 
-SRCS = Zombie.cpp main.cpp newZombie.cpp randomChump.cpp
+SRCS = Zombie.cpp main.cpp zombieHorde.cpp
 
 OBJ = $(SRCS:.cpp=.o)
 

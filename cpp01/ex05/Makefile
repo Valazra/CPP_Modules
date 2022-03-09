@@ -4,9 +4,9 @@ COMPILER = clang++
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-INCS = 
+INCS = Karen.hpp 
 
-SRCS = main.cpp
+SRCS = main.cpp Karen.cpp
 
 OBJ = $(SRCS:.cpp=.o)
 

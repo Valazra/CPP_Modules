@@ -6,13 +6,18 @@
 /*   By: user42 <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 15:01:25 by user42            #+#    #+#             */
-/*   Updated: 2022/03/08 17:08:46 by user42           ###   ########.fr       */
+/*   Updated: 2022/03/09 15:11:22 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Weapon.hpp"
 
 Weapon::Weapon(std::string type) : _type(type)
+{
+	return ;
+}
+
+Weapon::~Weapon(void)
 {
 	return ;
 }

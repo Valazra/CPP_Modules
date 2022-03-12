@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: user42 <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/10 23:21:16 by user42            #+#    #+#             */
-/*   Updated: 2022/03/11 14:52:59 by user42           ###   ########.fr       */
+/*   Created: 2022/03/11 18:23:55 by user42            #+#    #+#             */
+/*   Updated: 2022/03/11 18:26:48 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "DiamondTrap.hpp"
 
-int	main(void)
+DiamondTrap::DiamondTrap(void) : ClapTrap::ClapTrap(), ScavTrap::ScavTrap(), FragTrap::FragTrap()
 {
-	ClapTrap Toto("Toto");
-
-	Toto.attack("Coco");
-	Toto.takeDamage(5);
-	Toto.beRepaired(3);
-
-	return (0);
+	return ;
 }

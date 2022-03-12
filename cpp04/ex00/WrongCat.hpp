@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: user42 <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/10 23:21:16 by user42            #+#    #+#             */
-/*   Updated: 2022/03/11 14:52:59 by user42           ###   ########.fr       */
+/*   Created: 2022/03/12 13:43:10 by user42            #+#    #+#             */
+/*   Updated: 2022/03/12 15:31:51 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
 
-int	main(void)
+# include "WrongAnimal.hpp"
+
+class WrongCat : public WrongAnimal
 {
-	ClapTrap Toto("Toto");
+	public :
+		WrongCat(void);
+		WrongCat(WrongCat const & src);
+		~WrongCat(void);
 
-	Toto.attack("Coco");
-	Toto.takeDamage(5);
-	Toto.beRepaired(3);
+		WrongCat & operator=(WrongCat const & rhs);
 
-	return (0);
-}
+		void	makeSound(void) const;
+};
+
+#endif

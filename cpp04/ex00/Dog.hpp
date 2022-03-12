@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: user42 <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/10 23:21:16 by user42            #+#    #+#             */
-/*   Updated: 2022/03/11 14:52:59 by user42           ###   ########.fr       */
+/*   Created: 2022/03/12 13:37:19 by user42            #+#    #+#             */
+/*   Updated: 2022/03/12 14:42:07 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#ifndef DOG_HPP
+# define DOG_HPP
 
-int	main(void)
+# include "Animal.hpp"
+
+class Dog : public Animal
 {
-	ClapTrap Toto("Toto");
+	public :
+		Dog(void);
+		Dog(Dog const & src);
+		~Dog(void);
 
-	Toto.attack("Coco");
-	Toto.takeDamage(5);
-	Toto.beRepaired(3);
+		Dog & operator=(Dog const & rhs);
 
-	return (0);
-}
+		void makeSound(void) const;
+};
+
+#endif

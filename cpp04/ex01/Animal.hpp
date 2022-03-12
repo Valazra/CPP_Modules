@@ -1,24 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: user42 <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/10 23:21:16 by user42            #+#    #+#             */
-/*   Updated: 2022/03/11 14:52:59 by user42           ###   ########.fr       */
+/*   Created: 2022/03/12 11:41:23 by user42            #+#    #+#             */
+/*   Updated: 2022/03/12 15:23:24 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#ifndef ANIMAL_HPP
+# define ANIMAL_HPP
 
-int	main(void)
+# include <iostream>
+
+class Animal
 {
-	ClapTrap Toto("Toto");
+	public :
+		Animal(void);
+		Animal(Animal const & src);
+		virtual ~Animal(void);
 
-	Toto.attack("Coco");
-	Toto.takeDamage(5);
-	Toto.beRepaired(3);
+		Animal & operator=(Animal const & rhs);
 
-	return (0);
-}
+		std::string getType(void) const;
+
+		virtual void makeSound() const;
+
+	protected :
+		std::string _type;
+};
+
+#endif

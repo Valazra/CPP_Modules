@@ -1,24 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: user42 <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/10 23:21:16 by user42            #+#    #+#             */
-/*   Updated: 2022/03/11 14:52:59 by user42           ###   ########.fr       */
+/*   Created: 2022/03/12 15:35:44 by user42            #+#    #+#             */
+/*   Updated: 2022/03/12 16:08:34 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 
-int	main(void)
+# include <iostream>
+
+class Brain
 {
-	ClapTrap Toto("Toto");
+	public :
+		Brain(void);
+		Brain(Brain const & src);
+		~Brain(void);
 
-	Toto.attack("Coco");
-	Toto.takeDamage(5);
-	Toto.beRepaired(3);
+		Brain & operator=(Brain const & rhs);
 
-	return (0);
-}
+	protected :
+		std::string _ideas[100];
+};
+
+#endif

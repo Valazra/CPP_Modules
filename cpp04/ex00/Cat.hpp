@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: user42 <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/10 23:21:16 by user42            #+#    #+#             */
-/*   Updated: 2022/03/11 14:52:59 by user42           ###   ########.fr       */
+/*   Created: 2022/03/12 13:43:10 by user42            #+#    #+#             */
+/*   Updated: 2022/03/12 14:42:18 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#ifndef CAT_HPP
+# define CAT_HPP
 
-int	main(void)
+# include "Animal.hpp"
+
+class Cat : public Animal
 {
-	ClapTrap Toto("Toto");
+	public :
+		Cat(void);
+		Cat(Cat const & src);
+		~Cat(void);
 
-	Toto.attack("Coco");
-	Toto.takeDamage(5);
-	Toto.beRepaired(3);
+		Cat & operator=(Cat const & rhs);
 
-	return (0);
-}
+		void	makeSound(void) const;
+};
+
+#endif

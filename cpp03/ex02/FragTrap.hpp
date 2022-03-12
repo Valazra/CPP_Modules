@@ -1,24 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: user42 <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/10 23:21:16 by user42            #+#    #+#             */
-/*   Updated: 2022/03/11 14:52:59 by user42           ###   ########.fr       */
+/*   Created: 2022/03/11 15:29:22 by user42            #+#    #+#             */
+/*   Updated: 2022/03/12 13:26:53 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
 
-int	main(void)
+# include "ClapTrap.hpp"
+
+class FragTrap : public ClapTrap
 {
-	ClapTrap Toto("Toto");
+	public :
+		FragTrap(void);
+		FragTrap(std::string const name);
+		FragTrap(FragTrap const & src);
+		~FragTrap(void);
 
-	Toto.attack("Coco");
-	Toto.takeDamage(5);
-	Toto.beRepaired(3);
+		FragTrap & operator=(FragTrap const & rhs);
 
-	return (0);
-}
+	private :
+		void	highFivesGuys(void);
+};
+
+#endif

@@ -1,24 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: user42 <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/10 23:21:16 by user42            #+#    #+#             */
-/*   Updated: 2022/03/11 14:52:59 by user42           ###   ########.fr       */
+/*   Created: 2022/03/11 17:39:22 by user42            #+#    #+#             */
+/*   Updated: 2022/03/12 13:31:04 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#ifndef DIAMONDTRAP_HPP
+# define DIAMONDTRAP_HPP
 
-int	main(void)
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
+
+class DiamondTrap : public ScavTrap, public FragTrap
 {
-	ClapTrap Toto("Toto");
+	public :
+		DiamondTrap(void);
+		DiamondTrap(std::string const name);
+		DiamondTrap(DiamondTrap const & src);
+		~DiamondTrap(void);
 
-	Toto.attack("Coco");
-	Toto.takeDamage(5);
-	Toto.beRepaired(3);
+		DiamondTrap & operator=(DiamondTrap const & rhs);
 
-	return (0);
-}
+		void whoAmI(void);
+
+	private :
+		std::string _Name;
+};
+
+#endif

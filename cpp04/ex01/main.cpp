@@ -5,20 +5,32 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: user42 <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/10 23:21:16 by user42            #+#    #+#             */
-/*   Updated: 2022/03/11 14:52:59 by user42           ###   ########.fr       */
+/*   Created: 2022/03/12 13:50:41 by user42            #+#    #+#             */
+/*   Updated: 2022/03/12 16:15:23 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "Dog.hpp"
+#include "Cat.hpp"
+#include "Brain.hpp"
 
 int	main(void)
 {
-	ClapTrap Toto("Toto");
+	int nb_animals  = 8;
+	Animal *table_animals[nb_animals];
 
-	Toto.attack("Coco");
-	Toto.takeDamage(5);
-	Toto.beRepaired(3);
 
+	for (int i = 0; i < nb_animals; i++)
+	{
+		if (i % 2)
+			table_animals[i] = new Cat();
+		else
+			table_animals[i] = new Dog();
+	}
+	for (int i = 0; i < nb_animals; i++)
+		table_animals[i]->makeSound();
+
+	for (int i = 0; i < nb_animals; i++)
+		delete table_animals[i];
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: user42 <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 16:10:18 by user42            #+#    #+#             */
-/*   Updated: 2022/03/08 14:56:31 by user42           ###   ########.fr       */
+/*   Updated: 2022/03/20 17:24:27 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,11 @@ class Contact
 		void	add_contact();
 		void	display_columns() const;
 		void	display_one_contact() const;
+		std::string	getFirstName(void);
+		std::string	getLastName(void);
+		std::string	getNickname(void);
+		std::string	getPhoneNumber(void);
+		std::string	getDarkestSecret(void);
 
 	private :
 		std::string _first_name;

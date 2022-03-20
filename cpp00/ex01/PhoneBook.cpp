@@ -6,7 +6,7 @@
 /*   By: user42 <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 16:03:47 by user42            #+#    #+#             */
-/*   Updated: 2022/03/09 14:35:39 by user42           ###   ########.fr       */
+/*   Updated: 2022/03/20 17:09:10 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ void	search(Contact repertory[8], int index, int full)
 	}
 	else
 	{
-		if (num >= 0 && num <= 8)
+		if (num >= 0 && num < 8)
 			repertory[num].Contact::display_one_contact();
 		else
 			std::cout << "Bad index" << std::endl;

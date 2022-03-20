@@ -6,7 +6,7 @@
 /*   By: user42 <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 16:10:06 by user42            #+#    #+#             */
-/*   Updated: 2022/03/07 23:40:10 by user42           ###   ########.fr       */
+/*   Updated: 2022/03/20 17:41:03 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,31 @@ Contact::Contact(void)
 Contact::~Contact(void)
 {
 	return ;
+}
+
+std::string	Contact::getFirstName(void)
+{
+	return (_first_name);
+}
+
+std::string	Contact::getLastName(void)
+{
+	return (_last_name);
+}
+
+std::string	Contact::getNickname(void)
+{
+	return (_nickname);
+}
+
+std::string	Contact::getPhoneNumber(void)
+{
+	return (_phone_number);
+}
+
+std::string	Contact::getDarkestSecret(void)
+{
+	return (_darkest_secret);
 }
 
 void	Contact::add_contact(void)

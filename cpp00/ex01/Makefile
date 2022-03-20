@@ -1,4 +1,4 @@
-NAME = phone
+NAME = phonebook
 
 COMPILER = clang++
 

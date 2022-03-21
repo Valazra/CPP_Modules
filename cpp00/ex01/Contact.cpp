@@ -6,7 +6,7 @@
 /*   By: user42 <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 16:10:06 by user42            #+#    #+#             */
-/*   Updated: 2022/03/20 17:41:03 by user42           ###   ########.fr       */
+/*   Updated: 2022/03/21 16:45:12 by vazra            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,16 +49,57 @@ std::string	Contact::getDarkestSecret(void)
 
 void	Contact::add_contact(void)
 {
+	std::string	buffer1;
+	std::string	buffer2;
+	std::string	buffer3;
+	std::string	buffer4;
+	std::string	buffer5;
+
 	std::cout << "first name : ";
-	std::getline(std::cin, this->_first_name);
+	std::getline(std::cin, buffer1);
+	while (buffer1.length() == 0)
+	{
+		std::cout << "It can't be empty" << std::endl;
+		std::cout << "first name : ";
+		std::getline(std::cin, buffer1);
+	}
 	std::cout << "last name : ";
-	std::getline(std::cin, this->_last_name);
+	std::getline(std::cin, buffer2);
+	while (buffer2.length() == 0)
+	{
+		std::cout << "It can't be empty" << std::endl;
+		std::cout << "last name : ";
+		std::getline(std::cin, buffer2);
+	}
 	std::cout << "nickname : ";
-	std::getline(std::cin, this->_nickname);
+	std::getline(std::cin, buffer3);
+	while (buffer3.length() == 0)
+	{
+		std::cout << "It can't be empty" << std::endl;
+		std::cout << "nickname : ";
+		std::getline(std::cin, buffer3);
+	}
 	std::cout << "phone number : ";
-	std::getline(std::cin, this->_phone_number);
+	std::getline(std::cin, buffer4);
+	while (buffer4.length() == 0)
+	{
+		std::cout << "It can't be empty" << std::endl;
+		std::cout << "phone number : ";
+		std::getline(std::cin, buffer4);
+	}
 	std::cout << "darkest secret : ";
-	std::getline(std::cin, this->_darkest_secret);
+	std::getline(std::cin, buffer5);
+	while (buffer5.length() == 0)
+	{
+		std::cout << "It can't be empty" << std::endl;
+		std::cout << "darkest secret : ";
+		std::getline(std::cin, buffer5);
+	}
+	this->_first_name = buffer1;
+	this->_last_name = buffer2;
+	this->_nickname = buffer3;
+	this->_phone_number = buffer4;
+	this->_darkest_secret = buffer5;
 	std::cout << this->_first_name << " has been added successfully" << std::endl;
 }
 

@@ -6,7 +6,7 @@
 /*   By: user42 <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 23:53:25 by user42            #+#    #+#             */
-/*   Updated: 2022/03/08 14:33:22 by user42           ###   ########.fr       */
+/*   Updated: 2022/03/22 19:04:00 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,11 @@
 
 Zombie::Zombie(void)
 {
+	std::cout << "The zombie has been created." << std::endl;
 	return ;
 }
 
-Zombie::Zombie(std::string const name) : _name(name)
+Zombie::Zombie(std::string name) : _name(name)
 {
 	return ;
 }
@@ -34,8 +35,9 @@ void	Zombie::announce(void) const
 	return ;
 }
 
-void	Zombie::setName(std::string const name)
+void	Zombie::setName(std::string name)
 {
-	Zombie::_name = name;
+	this->_name = name;
+	std::cout << "Function setName has been called" << std::endl;
 	return ;
 }

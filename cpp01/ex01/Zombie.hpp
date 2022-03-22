@@ -6,7 +6,7 @@
 /*   By: user42 <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 23:53:01 by user42            #+#    #+#             */
-/*   Updated: 2022/03/08 14:55:48 by user42           ###   ########.fr       */
+/*   Updated: 2022/03/22 18:52:45 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ class Zombie
 {
 	public :
 		Zombie(void);
-		Zombie(std::string const name);
+		Zombie(std::string name);
 		~Zombie(void);
 		void	announce(void) const;
-		void	setName(std::string const name);
+		void	setName(std::string name);
 
 	private :
 		std::string _name;

@@ -6,7 +6,7 @@
 /*   By: user42 <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 15:01:25 by user42            #+#    #+#             */
-/*   Updated: 2022/03/09 15:11:22 by user42           ###   ########.fr       */
+/*   Updated: 2022/03/22 19:53:12 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	Weapon::setType(std::string type)
 	return ;
 }
 
-std::string& Weapon::getType(void)
+std::string const & Weapon::getType(void)
 {
 	return (_type);
 }

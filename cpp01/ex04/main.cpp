@@ -6,7 +6,7 @@
 /*   By: user42 <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 17:48:19 by user42            #+#    #+#             */
-/*   Updated: 2022/03/23 01:58:08 by user42           ###   ########.fr       */
+/*   Updated: 2022/03/23 16:09:58 by vazra            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void replace_line(std::string &line, std::string old_str, std::string new_str)
 	size_t	actual_pos = 0;
 	size_t	pos_to_change;
 
-	while ((pos_to_change = line.find(old_str, actual_pos)) != std::string::npos_to_change)
+	while ((pos_to_change = line.find(old_str, actual_pos)) != std::string::npos)
 	{
 		line.erase(pos_to_change, old_str.length());
 		line.insert(pos_to_change, new_str);

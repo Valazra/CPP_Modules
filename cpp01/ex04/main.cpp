@@ -6,12 +6,13 @@
 /*   By: user42 <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 17:48:19 by user42            #+#    #+#             */
-/*   Updated: 2022/03/09 13:18:32 by user42           ###   ########.fr       */
+/*   Updated: 2022/03/23 01:58:08 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <fstream>
+#include <string>
 
 int	empty_string(std::string str)
 {
@@ -23,35 +24,17 @@ int	empty_string(std::string str)
 	return (0);
 }
 
-std::string replace(std::string data_str, std::string old_str, std::string new_str)
+void replace_line(std::string &line, std::string old_str, std::string new_str)
 {
-	unsigned long long	i;
-	unsigned long long	j;
-	std::string		result;
+	size_t	actual_pos = 0;
+	size_t	pos_to_change;
 
-	i = 0;
-	while (i < data_str.length())
+	while ((pos_to_change = line.find(old_str, actual_pos)) != std::string::npos_to_change)
 	{
-		j = 0;
-		while (j < old_str.length())
-		{
-			if (data_str[i + j] == old_str[j] && j == old_str.length() - 1)
-			{
-				result += new_str;
-				i += old_str.length() - 1;
-			}
-			else if (data_str[i + j] == old_str[j])
-				;
-			else
-			{
-				result += data_str[i];
-				break ;
-			}
-			j++;
-		}
-		i++;
+		line.erase(pos_to_change, old_str.length());
+		line.insert(pos_to_change, new_str);
+		actual_pos = pos_to_change + new_str.length();
 	}
-	return (result);
 }
 
 int	main(int ac, char **av)
@@ -59,9 +42,7 @@ int	main(int ac, char **av)
 	std::string	file_name;
 	std::string	old_str;
 	std::string	new_str;
-	std::string	data_str;
-	std::string	tmp;
-	std::string	result;
+	std::string	line;
 
 	if (ac != 4)
 	{
@@ -72,8 +53,6 @@ int	main(int ac, char **av)
 	if (empty_string(old_str))
 		return (1);
 	new_str = av[3];
-	if (empty_string(new_str))
-		return (1);
 	std::ifstream ifs(av[1]);
 	if (!ifs.is_open())
 	{
@@ -82,14 +61,17 @@ int	main(int ac, char **av)
 	}
 	file_name = av[1];
 	file_name +=  ".replace";
-	while (getline(ifs, tmp))
-	{
-		data_str += tmp;
-		if (!ifs.eof())
-			data_str += '\n';
-	}
-	result = replace(data_str, old_str, new_str);
 	std::ofstream ofs(file_name.c_str());
-	ofs << result;
+	if (!ofs.is_open())
+	{
+		std::cout << "Problem with ofstream open" << std::endl;
+		ifs.close();
+		return (1);
+	}
+	while (getline(ifs, line))
+	{
+		replace_line(line, old_str, new_str);
+		ofs << line << std::endl;
+	}
 	return (0);
 }

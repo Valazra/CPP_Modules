@@ -6,7 +6,7 @@
 /*   By: user42 <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 15:09:03 by user42            #+#    #+#             */
-/*   Updated: 2022/03/23 02:26:44 by user42           ###   ########.fr       */
+/*   Updated: 2022/03/23 15:01:47 by vazra            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	Harl::error(void)
 void	Harl::complain(std::string level)
 {
 	std::string level_tab[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-	void (Harl::*fct_tab[])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+	void (Harl::*fct_tab[4])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
 	for (int i = 0 ; i < 4 ; i++)
 	{
 		if (!level.compare(level_tab[i]))

@@ -6,7 +6,7 @@
 /*   By: user42 <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 16:06:31 by user42            #+#    #+#             */
-/*   Updated: 2022/03/20 17:19:49 by user42           ###   ########.fr       */
+/*   Updated: 2022/03/23 14:45:28 by vazra            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class PhoneBook
 		int	start(void);
 
 	private :
-		Contact	repertory[8];
+		Contact	_repertory[8];
 };
 
 #endif

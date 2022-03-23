@@ -6,7 +6,7 @@
 /*   By: user42 <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 16:03:47 by user42            #+#    #+#             */
-/*   Updated: 2022/03/20 17:09:10 by user42           ###   ########.fr       */
+/*   Updated: 2022/03/23 14:45:48 by vazra            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,11 +117,11 @@ int	PhoneBook::start(void)
 				full = 1;
 				index = 0;
 			}
-			repertory[index].add_contact();
+			_repertory[index].add_contact();
 			index++;
 		}
 		else if (buffer == "SEARCH")
-			search(repertory, index, full);
+			search(_repertory, index, full);
 		else if (buffer == "EXIT")
 		{
 			std::cout << "Phone has been disconnected successfully." << std::endl;

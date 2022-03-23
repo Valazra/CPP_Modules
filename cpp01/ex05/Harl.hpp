@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Karen.hpp                                          :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: user42 <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 15:06:31 by user42            #+#    #+#             */
-/*   Updated: 2022/03/09 15:25:45 by user42           ###   ########.fr       */
+/*   Updated: 2022/03/23 02:17:52 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef KAREN_HPP
-# define KAREN_HPP
+#ifndef HARL_HPP
+# define HARL_HPP
 
 # include <iostream>
 
-class Karen
+class Harl
 {
 	public :
-		Karen(void);
-		~Karen(void);
+		Harl(void);
+		~Harl(void);
 		void complain(std::string level);
 
 	private :

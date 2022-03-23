@@ -1,4 +1,4 @@
-NAME = ex05
+NAME = harlFilter
 
 COMPILER = clang++
 

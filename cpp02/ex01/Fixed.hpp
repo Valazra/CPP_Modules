@@ -6,7 +6,7 @@
 /*   By: user42 <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 15:39:53 by user42            #+#    #+#             */
-/*   Updated: 2022/03/10 13:30:41 by user42           ###   ########.fr       */
+/*   Updated: 2022/03/26 15:28:51 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ class Fixed
 
 	private :
 		int			_value_nb;
-		static const int	_nb_bits = 8;
+		static const int	_scaling_factor = 8;
 };
 
-std::ostream &	operator<<(std::ostream & o, Fixed const & i);
+std::ostream &	operator<<(std::ostream & o, Fixed const & rhs);
 
 #endif

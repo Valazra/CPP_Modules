@@ -6,7 +6,7 @@
 /*   By: user42 <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 15:39:53 by user42            #+#    #+#             */
-/*   Updated: 2022/03/10 13:34:49 by user42           ###   ########.fr       */
+/*   Updated: 2022/03/28 14:55:13 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class Fixed
 
 	private :
 		int			_value_nb;
-		static const int	_nb_bits = 8;
+		static const int	_scaling_factor = 8;
 };
 
 #endif

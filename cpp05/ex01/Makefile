@@ -1,6 +1,6 @@
 NAME = ex01
 
-COMPILER = clang++
+COMPILER = c++
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 

@@ -6,7 +6,7 @@
 /*   By: user42 <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 13:12:40 by user42            #+#    #+#             */
-/*   Updated: 2022/03/28 15:13:03 by user42           ###   ########.fr       */
+/*   Updated: 2022/03/28 18:57:00 by vazra            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ float	Fixed::toFloat(void) const
 
 int	Fixed::toInt(void) const
 {
-	return (_value_nb >> _scaling_factor);
+	return (_value_nb / (1 << _scaling_factor));
 }
 
 Fixed &	Fixed::operator=(Fixed const & rhs)

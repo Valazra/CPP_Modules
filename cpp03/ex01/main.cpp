@@ -3,18 +3,22 @@
 
 int	main(void)
 {
+	std::cout << "***************** Constructors *****************" << std::endl;
 	ClapTrap Toto("Toto");
-	ScavTrap Tata("Tata");
+	ScavTrap Monster("Monster");
+	ScavTrap Monster2(Monster);
 
+	std::cout << std::endl <<  "********* Actions of ClapTrap Toto *********" << std::endl;
 	Toto.attack("Coco");
 	Toto.takeDamage(5);
 	Toto.beRepaired(3);
 
-	Tata.attack("Nono");
-	Tata.takeDamage(10);
-	Tata.beRepaired(30);
-	
-	Tata.guardGate();
+	std::cout << std::endl << "********* Actions of ScavTrap Monster *********" << std::endl;
+	Monster.attack("Nono");
+	Monster.takeDamage(10);
+	Monster.beRepaired(30);
+	Monster.guardGate();
 
+	std::cout << std::endl << "***************** Destructors *****************" << std::endl;
 	return (0);
 }

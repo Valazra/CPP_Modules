@@ -6,7 +6,7 @@
 /*   By: user42 <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 23:21:16 by user42            #+#    #+#             */
-/*   Updated: 2022/03/11 15:22:30 by user42           ###   ########.fr       */
+/*   Updated: 2022/03/27 15:39:26 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ int	main(void)
 	Tata.attack("Nono");
 	Tata.takeDamage(10);
 	Tata.beRepaired(30);
+	
+	Tata.guardGate();
 
 	return (0);
 }

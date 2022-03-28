@@ -6,7 +6,7 @@
 /*   By: user42 <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 15:05:37 by user42            #+#    #+#             */
-/*   Updated: 2022/03/12 13:21:20 by user42           ###   ########.fr       */
+/*   Updated: 2022/03/27 15:37:17 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ int	ScavTrap::getGuardGate(void) const
 	return (_Guard_gate_on);
 }
 
-void	ScavTrap::setGuardGate(int const activated)
+void	ScavTrap::setGuardGate(bool activated)
 {
 	_Guard_gate_on = activated;
 	return ;

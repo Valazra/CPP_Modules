@@ -6,7 +6,7 @@
 /*   By: user42 <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 15:01:25 by user42            #+#    #+#             */
-/*   Updated: 2022/03/12 13:22:19 by user42           ###   ########.fr       */
+/*   Updated: 2022/03/27 15:38:59 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,12 @@ class ScavTrap : public ClapTrap
 		ScavTrap & operator=(ScavTrap const & rhs);
 
 		void	attack(const std::string& target);
+		void	guardGate(void);
 		int	getGuardGate(void) const;
-		void	setGuardGate(int const activated);
+		void	setGuardGate(bool const activated);
 
 	private :
-		int	_Guard_gate_on;
-		void	guardGate(void);
+		bool	_Guard_gate_on;
 		
 };
 

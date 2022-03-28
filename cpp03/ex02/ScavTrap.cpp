@@ -1,6 +1,6 @@
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(void)
+ScavTrap::ScavTrap(void) : ClapTrap()
 {
 	std::cout << "ScavTrap default constructor called" << std::endl;
 	_Hit_points = 100;
@@ -9,17 +9,16 @@ ScavTrap::ScavTrap(void)
 	return ;
 }
  
-ScavTrap::ScavTrap(std::string const name)
+ScavTrap::ScavTrap(std::string const name) : ClapTrap(name)
 {
 	std::cout << "ScavTrap string constructor called" << std::endl;
-	_Name = name;
 	_Hit_points = 100;
 	_Energy_points = 50;
 	_Attack_damage = 20;
 	return ;
 }
  
-ScavTrap::ScavTrap(ScavTrap const & src)
+ScavTrap::ScavTrap(ScavTrap const & src) : ClapTrap(src)
 {
 	std::cout << "ScavTrap copy constructor called" << std::endl;
 	*this = src;
@@ -46,17 +45,17 @@ void	ScavTrap::attack(const std::string& target)
 {
 	if (this->_Hit_points > 0 && this->_Energy_points > 0)
 	{
-		std::cout << "ScavTrap " << _Name << " attacks " << target << ", causing " << _Attack_damage << " points of damage !" << std::endl;
+		std::cout << _Name << " attacks " << target << ", causing " << _Attack_damage << " points of damage !" << std::endl;
 		this->_Energy_points -= 1;
 	}
 	else
-		std::cout << "ScavTrap " << _Name << " has no energy points or hit points" << std::endl;
+		std::cout << _Name << " has no energy points or hit points" << std::endl;
 	return ;
 }
 
 void	ScavTrap::guardGate(void)
 {
-	std::cout << "ScavTrap " << _Name << " is now in Gate keeper mode." << std::endl;
+	std::cout << _Name << " is now in Gate keeper mode." << std::endl;
 	_Guard_gate_on = 1;
 	return ;
 }
@@ -66,7 +65,7 @@ int	ScavTrap::getGuardGate(void) const
 	return (_Guard_gate_on);
 }
 
-void	ScavTrap::setGuardGate(int const activated)
+void	ScavTrap::setGuardGate(bool const activated)
 {
 	_Guard_gate_on = activated;
 	return ;

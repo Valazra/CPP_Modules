@@ -14,12 +14,12 @@ class ScavTrap : public ClapTrap
 		ScavTrap & operator=(ScavTrap const & rhs);
 
 		void	attack(const std::string& target);
+		void	guardGate(void);
 		int	getGuardGate(void) const;
-		void	setGuardGate(int const activated);
+		void	setGuardGate(bool const activated);
 
 	private :
-		int	_Guard_gate_on;
-		void	guardGate(void);
+		bool	_Guard_gate_on;
 		
 };
 

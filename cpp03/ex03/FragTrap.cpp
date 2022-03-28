@@ -1,6 +1,6 @@
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap(void)
+FragTrap::FragTrap(void) : ClapTrap()
 {
 	std::cout << "FragTrap default constructor called" << std::endl;
 	_Hit_points = 100;
@@ -9,17 +9,16 @@ FragTrap::FragTrap(void)
 	return ;
 }
 
-FragTrap::FragTrap(std::string const name)
+FragTrap::FragTrap(std::string const name) : ClapTrap(name)
 {
 	std::cout << "FragTrap string constructor called" << std::endl;
-	_Name = name;
 	_Hit_points = 100;
 	_Energy_points = 100;
 	_Attack_damage = 30;
 	return ;
 }
 
-FragTrap::FragTrap(FragTrap const & src)
+FragTrap::FragTrap(FragTrap const & src) : ClapTrap(src)
 {
 	std::cout << "FragTrap copy constructor called" << std::endl;
 	*this = src;
@@ -43,6 +42,6 @@ FragTrap & FragTrap::operator=(FragTrap const & rhs)
 
 void	FragTrap::highFivesGuys(void)
 {
-	std::cout << "FragTrap " << _Name << " wants to high fives !" << std::endl;
+	std::cout << _Name << " wants to high fives !" << std::endl;
 	return ;
 }

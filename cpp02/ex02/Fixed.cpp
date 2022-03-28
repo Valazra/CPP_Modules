@@ -6,7 +6,7 @@
 /*   By: user42 <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 13:12:40 by user42            #+#    #+#             */
-/*   Updated: 2022/03/26 16:35:13 by user42           ###   ########.fr       */
+/*   Updated: 2022/03/28 15:13:03 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	Fixed::setRawBits(int const raw)
 
 float	Fixed::toFloat(void) const
 {
-	return (roundf(_value_nb) / (1 << _scaling_factor));
+	return ((float)(_value_nb) / (1 << _scaling_factor));
 }
 
 int	Fixed::toInt(void) const

@@ -3,6 +3,7 @@
 DiamondTrap::DiamondTrap(void) : ClapTrap()
 {
 	std::cout << "DiamondTrap default constructor called" << std::endl;
+	this->_Name = ClapTrap::_Name;
 	ClapTrap::_Name += "_clap_name";
 	DiamondTrap::_Hit_points = FragTrap::_Hit_points;
 	DiamondTrap::_Energy_points = ScavTrap::_Energy_points;
@@ -35,11 +36,12 @@ DiamondTrap::~DiamondTrap(void)
 
 DiamondTrap & DiamondTrap::operator=(DiamondTrap const & rhs)
 {
-	ClapTrap::setName(rhs.getName());
-	ClapTrap::setHitPoints(rhs.getHitPoints());
-	ClapTrap::setEnergyPoints(rhs.getEnergyPoints());
-	ClapTrap::setAttackDamage(rhs.getAttackDamage());
-	ScavTrap::setGuardGate(rhs.getGuardGate());
+	ClapTrap::_Name = rhs.getName();
+	this->_Name = rhs._Name;
+	_Hit_points = rhs._Hit_points;
+	_Energy_points = rhs._Energy_points;
+	_Attack_damage = rhs._Attack_damage;
+	
 	return (*this);
 }
 

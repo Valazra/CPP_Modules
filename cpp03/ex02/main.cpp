@@ -15,19 +15,22 @@ int	main(void)
 
 	std::cout << std::endl << "********* Take damages *********" << std::endl;
 	Toto.takeDamage(5);
-	Tata.takeDamage(10);
-	Tutu.takeDamage(15);
+	Tata.takeDamage(5);
+	Tutu.takeDamage(5);
 	
 	std::cout << std::endl << "********* Repairs *********" << std::endl;
-	Toto.beRepaired(5);
-	Tata.beRepaired(10);
-	Tutu.beRepaired(15);
+	Toto.beRepaired(25);
+	Tata.beRepaired(25);
+	Tutu.beRepaired(25);
 
 	std::cout << std::endl << "********* Special Capacity *********" << std::endl;
 	Tata.guardGate();
 	Tutu.highFivesGuys();
 
-	std::cout << std::endl << Tutu.getName() << " has " << Tutu.getHitPoints() << " hit points, " << Tutu.getEnergyPoints() << " energy points and " << Tutu.getAttackDamage() << " attack damage." << std::endl;
+	std::cout << std::endl << "********* Status *********" << std::endl;
+	std::cout << Toto.getName() << " has " << Toto.getHitPoints() << " hit points, " << Toto.getEnergyPoints() << " energy points and " << Toto.getAttackDamage() << " attack damage." << std::endl;
+	std::cout << Tata.getName() << " has " << Tata.getHitPoints() << " hit points, " << Tata.getEnergyPoints() << " energy points and " << Tata.getAttackDamage() << " attack damage." << std::endl;
+	std::cout << Tutu.getName() << " has " << Tutu.getHitPoints() << " hit points, " << Tutu.getEnergyPoints() << " energy points and " << Tutu.getAttackDamage() << " attack damage." << std::endl;
 	std::cout << std::endl << "***************** Destructors *****************" << std::endl;
 
 	return (0);

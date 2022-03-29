@@ -60,7 +60,7 @@ void	ScavTrap::guardGate(void)
 	return ;
 }
 
-int	ScavTrap::getGuardGate(void) const
+bool	ScavTrap::getGuardGate(void) const
 {
 	return (_Guard_gate_on);
 }

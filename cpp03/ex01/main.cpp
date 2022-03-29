@@ -8,13 +8,8 @@ int	main(void)
 	ScavTrap Tata("Tata");
 	ScavTrap Tata2(Tata);
 
-	std::cout << std::endl <<  "********* Actions of ClapTrap Toto *********" << std::endl;
-	Toto.attack("Coco");
-	Toto.takeDamage(5);
-	Toto.beRepaired(3);
-
 	std::cout << std::endl << "********* Actions of ScavTrap Tata *********" << std::endl;
-	std::cout << std::endl << Tata.getName() << " has " << Tata.getHitPoints() << " hit points, " << Tata.getEnergyPoints() << " energy points and " << Tata.getAttackDamage() << " attack damage." << std::endl;
+	std::cout << Tata.getName() << " has " << Tata.getHitPoints() << " hit points, " << Tata.getEnergyPoints() << " energy points and " << Tata.getAttackDamage() << " attack damage." << std::endl;
 	Tata.attack("Nono");
 	Tata.takeDamage(10);
 	Tata.beRepaired(30);

@@ -21,7 +21,7 @@ DiamondTrap::DiamondTrap(std::string const name) : ClapTrap(name + "_clap_name")
 	return ;
 }
 
-DiamondTrap::DiamondTrap(const DiamondTrap &src) : ClapTrap(src), ScavTrap(src), FragTrap(src)
+DiamondTrap::DiamondTrap(const DiamondTrap &src) : ClapTrap(src._Name + "_clap_name"), ScavTrap(src), FragTrap(src), _Name(src._Name)
 {
 	std::cout << "DiamondTrap copy constructor called" << std::endl;
 	*this = src;
@@ -51,8 +51,13 @@ void	DiamondTrap::attack(const std::string& target)
 	return ;
 }
 
-void	DiamondTrap::whoAmI()
+void	DiamondTrap::whoAmI(void)
 {
 	std::cout << "DiamondTrap name = " << this->_Name << std::endl;
 	std::cout << "ClapTrap name = " << this->ClapTrap::_Name << std::endl;
+}
+
+std::string	DiamondTrap::getName(void) const
+{
+	return (this->_Name);
 }

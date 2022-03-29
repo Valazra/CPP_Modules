@@ -27,6 +27,7 @@ int	main(void)
 	Tata.guardGate();
 	Tutu.highFivesGuys();
 
+	std::cout << std::endl << Tutu.getName() << " has " << Tutu.getHitPoints() << " hit points, " << Tutu.getEnergyPoints() << " energy points and " << Tutu.getAttackDamage() << " attack damage." << std::endl;
 	std::cout << std::endl << "***************** Destructors *****************" << std::endl;
 
 	return (0);

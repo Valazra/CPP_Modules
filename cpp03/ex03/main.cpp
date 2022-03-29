@@ -4,9 +4,9 @@ int	main(void)
 {
 	std::cout << "***************** Constructors *****************" << std::endl;
 	DiamondTrap Titi("Titi");
-	DiamondTrap Titi2 = Titi;
-	DiamondTrap Titi3(Titi2);
-	DiamondTrap Titi4;
+	DiamondTrap Titi2(Titi);
+	DiamondTrap Titi3;
+	DiamondTrap Titi4 = Titi;
 
 	std::cout << std::endl <<  "********* Attack *********" << std::endl;
 	Titi.attack("Coco");
@@ -20,6 +20,10 @@ int	main(void)
 	Titi3.whoAmI();
 	Titi4.whoAmI();
 
+	std::cout << std::endl << Titi.getName() << " has " << Titi.getHitPoints() << " hit points, " << Titi.getEnergyPoints() << " energy points and " << Titi.getAttackDamage() << " attack damage." << std::endl;
+	std::cout << std::endl << Titi2.getName() << " has " << Titi2.getHitPoints() << " hit points, " << Titi2.getEnergyPoints() << " energy points and " << Titi2.getAttackDamage() << " attack damage." << std::endl;
+	std::cout << std::endl << Titi3.getName() << " has " << Titi3.getHitPoints() << " hit points, " << Titi3.getEnergyPoints() << " energy points and " << Titi3.getAttackDamage() << " attack damage." << std::endl;
+	std::cout << std::endl << Titi4.getName() << " has " << Titi4.getHitPoints() << " hit points, " << Titi4.getEnergyPoints() << " energy points and " << Titi4.getAttackDamage() << " attack damage." << std::endl;
 	std::cout << std::endl << "***************** Destructors *****************" << std::endl;
 
 	return (0);

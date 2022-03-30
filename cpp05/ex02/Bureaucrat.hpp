@@ -3,9 +3,9 @@
 
 # include <iostream>
 # include <stdexcept>
-# include "Form.hpp"
+# include "AForm.hpp"
 
-class Form;
+class AForm;
 
 class Bureaucrat
 {
@@ -24,23 +24,24 @@ class Bureaucrat
 		int		getGrade(void) const;
 		void		incrementGrade(void);
 		void		decrementGrade(void);
-		void		signForm(Form & f);
+		void		signForm(AForm & f);
+		void		executeForm(AForm const & form);
 
 		class GradeTooHighException : public std::exception
 		{
 			public :
-				virtual const char* what() const throw()
+				virtual const char* what(void) const throw()
 				{
-					return ("Bureaucrat : Grade too high");
+					return ("Bureaucrat : Exception : Grade too high");
 				}
 		};
 
 		class GradeTooLowException : public std::exception
 		{
 			public :
-				virtual const char* what() const throw()
+				virtual const char* what(void) const throw()
 				{
-					return ("Bureaucrat : Grade too low");
+					return ("Bureaucrat : Exception : Grade too low");
 				}
 		};
 
@@ -49,6 +50,6 @@ class Bureaucrat
 		int			_grade;
 };
 
-std::ostream & operator<<(std::ostream & o, Bureaucrat const & src);
+std::ostream & operator<<(std::ostream & lhs, Bureaucrat const & rhs);
 
 #endif

@@ -1,9 +1,9 @@
 #ifndef PRESIDENTIALPARDONFORM_HPP
 # define PRESIDENTIALPARDONFORM_HPP
 
-# include "Form.hpp"
+# include "AForm.hpp"
 
-class PresidentialPardonForm : public Form
+class PresidentialPardonForm : public AForm
 {
 	public :
 		PresidentialPardonForm(void);
@@ -14,6 +14,7 @@ class PresidentialPardonForm : public Form
 		PresidentialPardonForm & operator=(PresidentialPardonForm const & rhs);
 
 		std::string	getTarget(void) const;
+		void		execute(Bureaucrat const & executor) const;
 
 	private :
 		std::string	_target;

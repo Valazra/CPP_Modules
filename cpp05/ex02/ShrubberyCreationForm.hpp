@@ -1,9 +1,9 @@
 #ifndef SHRUBBERYCREATIONFORM_HPP
 # define SHRUBBERYCREATIONFORM_HPP
 
-# include "Form.hpp"
+# include "AForm.hpp"
 
-class ShrubberyCreationForm : public Form
+class ShrubberyCreationForm : public AForm
 {
 	public :
 		ShrubberyCreationForm(void);
@@ -14,6 +14,7 @@ class ShrubberyCreationForm : public Form
 		ShrubberyCreationForm & operator=(ShrubberyCreationForm const & rhs);
 
 		std::string	getTarget(void) const;
+		void		execute(Bureaucrat const & executor) const;
 
 	private :
 		std::string	_target;

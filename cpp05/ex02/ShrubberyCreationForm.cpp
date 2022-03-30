@@ -1,17 +1,18 @@
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm(void) : Form("ShrubberyCreationForm", 145, 37), _target("Default target")
+ShrubberyCreationForm::ShrubberyCreationForm(void) : AForm("ShrubberyCreationForm", 145, 37), _target("Default target")
 {
 	return ;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : Form("ShrubberyCreationForm", 145, 137), _target(target)
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm("ShrubberyCreationForm", 145, 137), _target(target)
 {
 	return ;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const & src) : Form(src)
+ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const & src) : AForm(src.getName(), src.getGradeSign(), src.getGradeExec())
 {
+	this->setSigned(src.getSigned());
 	this->_target = src.getTarget();
 	return ;
 }
@@ -31,4 +32,10 @@ ShrubberyCreationForm & ShrubberyCreationForm::operator=(ShrubberyCreationForm c
 std::string	ShrubberyCreationForm::getTarget(void) const
 {
 	return (_target);
+}
+
+void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const
+{
+	this->checkBeforeExecute(executor);
+	std::cout << "test1" << std::endl;
 }

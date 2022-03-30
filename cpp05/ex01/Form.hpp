@@ -19,14 +19,14 @@ class Form
 		bool		getSigned(void) const;
 		int		getGradeSign(void) const;
 		int		getGradeExec(void) const;
-		Form & 		beSigned(Bureaucrat const & bureaucrat);
+		void 		beSigned(Bureaucrat const & bureaucrat);
 
 		class GradeTooHighException : public std::exception
 		{
 			public :
 				virtual const char* what() const throw()
 				{
-					return ("Form : Grade too high");
+					return ("Form : Exception : Grade too high");
 				}
 		};
 
@@ -35,7 +35,7 @@ class Form
 			public :
 				virtual const char* what() const throw()
 				{
-					return ("Form : Grade too low");
+					return ("Form : Exception : Grade too low");
 				}
 		};
 
@@ -46,6 +46,6 @@ class Form
 		int const		_grade_exec;
 };
 
-std::ostream & operator<<(std::ostream & o, Form const & src);
+std::ostream & operator<<(std::ostream & lhs, Form const & rhs);
 
 #endif

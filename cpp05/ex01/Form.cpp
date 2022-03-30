@@ -1,6 +1,6 @@
 #include "Form.hpp"
 
-Form::Form(void) : _name("Default Form"), _signed(false), _grade_sign(10), _grade_exec(10)
+Form::Form(void) : _name("Default Form"), _signed(false), _grade_sign(150), _grade_exec(150)
 {
 	return ;
 }
@@ -16,6 +16,10 @@ Form::Form(std::string name, int grade_sign, int grade_exec) : _name(name), _sig
 
 Form::Form(Form const & src) : _name(src.getName()), _signed(src.getSigned()), _grade_sign(src.getGradeSign()), _grade_exec(src.getGradeExec())
 {
+	if (_grade_sign < 1 || _grade_exec < 1)
+		throw Form::GradeTooHighException();
+	if (_grade_sign > 150 || _grade_exec > 150)
+		throw Form::GradeTooLowException();
 	return ;
 }
 
@@ -52,17 +56,17 @@ int		Form::getGradeExec(void) const
 	return (_grade_exec);
 }
 
-Form & 		Form::beSigned(Bureaucrat const & bureaucrat)
+void	Form::beSigned(Bureaucrat const & bureaucrat)
 {
 	if (bureaucrat.getGrade() <= this->_grade_sign)
 		this->_signed = true;
 	else
 		throw Form::GradeTooLowException();
-	return (*this);
+	return ;
 }
 
-std::ostream & operator<<(std::ostream & o, Form const & src)
+std::ostream & operator<<(std::ostream & lhs, Form const & rhs)
 {
-	o << src.getName() << " : " << src.getSigned() << ", " << src.getGradeSign() << ", " << src.getGradeExec() << std::endl;
-	return (o);
+	lhs << "Form name : " << rhs.getName() << " | Is signed : " << rhs.getSigned() <<" | Grade sign : " << rhs.getGradeSign() << " | Grade exec : " << rhs.getGradeExec() << std::endl;
+	return (lhs);
 }

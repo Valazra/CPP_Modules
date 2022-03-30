@@ -31,7 +31,7 @@ class Bureaucrat
 			public :
 				virtual const char* what() const throw()
 				{
-					return ("Bureaucrat : Grade too high");
+					return ("Bureaucrat : Exception : Grade too high");
 				}
 		};
 
@@ -40,7 +40,7 @@ class Bureaucrat
 			public :
 				virtual const char* what() const throw()
 				{
-					return ("Bureaucrat : Grade too low");
+					return ("Bureaucrat : Exception : Grade too low");
 				}
 		};
 
@@ -49,6 +49,6 @@ class Bureaucrat
 		int			_grade;
 };
 
-std::ostream & operator<<(std::ostream & o, Bureaucrat const & src);
+std::ostream & operator<<(std::ostream & lhs, Bureaucrat const & rhs);
 
 #endif

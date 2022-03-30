@@ -10,21 +10,15 @@ Bureaucrat::Bureaucrat(std::string const name, int grade) : _name(name)
 	try
 	{
 		if (grade < 1)
-		{
 			throw Bureaucrat::GradeTooHighException();
-			return ;
-		}
 		if (grade > 150)
-		{
 			throw Bureaucrat::GradeTooLowException();
-			return ;
-		}
 	}
 	catch (std::exception & e)
 	{
 		std::cout << e.what() << std::endl;
-		std::cout << "Grade 150 assignated." << std::endl;
 		_grade = 150;
+		std::cout << "Grade 150 assignated." << std::endl;
 		return ;
 	}
 	this->_grade = grade;

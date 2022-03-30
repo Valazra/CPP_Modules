@@ -7,9 +7,6 @@
 class Bureaucrat
 {
 	public :
-
-
-
 		Bureaucrat(void);
 		Bureaucrat(std::string const name, int grade);
 		Bureaucrat(Bureaucrat const & src);
@@ -25,18 +22,18 @@ class Bureaucrat
 		class GradeTooHighException : public std::exception
 		{
 			public :
-				virtual const char* what() const throw()
+				virtual const char* what(void) const throw()
 				{
-					return ("Grade too high");
+					return ("Exception : Grade too high");
 				}
 		};
 
 		class GradeTooLowException : public std::exception
 		{
 			public :
-				virtual const char* what() const throw()
+				virtual const char* what(void) const throw()
 				{
-					return ("Grade too low");
+					return ("Exception : Grade too low");
 				}
 		};
 
@@ -45,6 +42,6 @@ class Bureaucrat
 		int			_grade;
 };
 
-std::ostream & operator<<(std::ostream & o, Bureaucrat const & src);
+std::ostream & operator<<(std::ostream & lhs, Bureaucrat const & rhs);
 
 #endif

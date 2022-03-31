@@ -2,6 +2,8 @@
 # define AFORM_HPP
 
 # include "Bureaucrat.hpp"
+# include <fstream>
+# include <cstdlib>
 
 class Bureaucrat;
 
@@ -48,6 +50,15 @@ class AForm
 				virtual const char* what(void) const throw()
 				{
 					return ("AForm : Exception : Unsigned form.");
+				}
+		};
+
+		class FailToOpen : public std::exception
+		{
+			public : 
+				virtual const char* what(void) const throw()
+				{
+					return ("AForm : Exception : Fail to open");
 				}
 		};
 

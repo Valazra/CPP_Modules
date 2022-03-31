@@ -37,5 +37,10 @@ std::string	RobotomyRequestForm::getTarget(void) const
 void		RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
 	this->checkBeforeExecute(executor);
-	std::cout << "test2" << std::endl;
+	srand(time(NULL));
+	std::cout << "* VRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR *" << std::endl;
+	if (std::rand() % 2)
+		std::cout << this->_target << " has been robotomized." << std::endl;
+	else
+		std::cout << this->_target << " failed to be robotomized." << std::endl;
 }

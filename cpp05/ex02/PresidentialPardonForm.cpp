@@ -37,5 +37,5 @@ std::string	PresidentialPardonForm::getTarget(void) const
 void		PresidentialPardonForm::execute(Bureaucrat const & executor) const
 {
 	this->checkBeforeExecute(executor);
-	std::cout << "test3" << std::endl;
+	std::cout << this->_target << " has been forgiven by Zaphod Beeblebrox." << std::endl;
 }

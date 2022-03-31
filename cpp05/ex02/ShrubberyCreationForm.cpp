@@ -37,5 +37,12 @@ std::string	ShrubberyCreationForm::getTarget(void) const
 void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
 	this->checkBeforeExecute(executor);
-	std::cout << "test1" << std::endl;
+	std::ofstream ofs((_target + "_shrubbery").c_str());
+	if (ofs.is_open())
+	{
+		ofs << "      /\\ \n" << "     /\\*\\ \n" << "    /\\O\\*\\ \n" << "   /*/\\/\\/\\ \n" << "  /\\O\\/\\*\\/\\ \n" << " /\\*\\/\\*\\/\\/\\ \n" << "/\\O\\/\\/*/\\/O/\\ \n" << "      ||    \n"  << "      ||     \n" << "      ||     \n";
+	}
+	else
+		throw AForm::FailToOpen();
+	ofs.close();
 }

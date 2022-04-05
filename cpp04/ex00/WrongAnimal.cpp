@@ -1,6 +1,6 @@
 #include "WrongAnimal.hpp"
 
-WrongAnimal::WrongAnimal(void) : _type("")
+WrongAnimal::WrongAnimal(void) : _type("WrongAnimal")
 {
 	std::cout << "WrongAnimal default constructor called" << std::endl;
 	return ;

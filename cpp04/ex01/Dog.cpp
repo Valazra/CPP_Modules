@@ -12,6 +12,7 @@ Dog::Dog(Dog const & src)
 {
 	std::cout << "Dog copy constructor called" << std::endl;
 	*this = src;
+	this->_dog_brain = new Brain();
 	return ;
 }
 
@@ -24,9 +25,8 @@ Dog::~Dog(void)
 
 Dog & Dog::operator=(Dog const & rhs)
 {
-	_type = rhs.getType();
-	_dog_brain = rhs._dog_brain;
-	std::cout << "Dog assignement operator called" << std::endl;
+	this->_type = rhs.getType();
+	this->_dog_brain = rhs._dog_brain;
 	return (*this);
 }
 

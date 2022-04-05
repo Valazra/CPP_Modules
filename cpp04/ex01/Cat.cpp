@@ -12,6 +12,7 @@ Cat::Cat(Cat const & src)
 {
 	std::cout << "Cat copy constructor called" << std::endl;
 	*this = src;
+	this->_cat_brain = new Brain();
 	return ;
 }
 
@@ -24,8 +25,11 @@ Cat::~Cat(void)
 
 Cat & Cat::operator=(Cat const & rhs)
 {
-	_type = rhs.getType();
-	_cat_brain = rhs._cat_brain;
+	if (this != &rhs)
+	{
+		_type = rhs.getType();
+		_cat_brain = rhs._cat_brain;
+	}
 	return (*this);
 }
 

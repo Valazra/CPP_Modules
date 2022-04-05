@@ -23,11 +23,16 @@ int	main(void)
 	std::cout << std::endl << "***************** Destructors *****************" << std::endl;
 	for (int i = 0; i < nb_animals; i++)
 		delete table_animals[i];
-	std::cout << std::endl << "**********************************" << std::endl;
+	std::cout << std::endl << "1**********************************" << std::endl;
 	Dog basic;
-	std::cout << std::endl << "**********************************" << std::endl;
-	Dog tmp;
-	tmp = basic;
-	std::cout << std::endl << "**********************************" << std::endl;
+	std::cout << std::endl << "2**********************************" << std::endl;
+	Dog tmp = basic;
+	std::cout << std::endl << "3**********************************" << std::endl;
+	Dog tmp2(basic);
+	std::cout << std::endl << "4**********************************" << std::endl;
+	Dog tmp3;
+	std::cout << std::endl << "5**********************************" << std::endl;
+//	tmp3 = basic;
+	std::cout << std::endl << "6**********************************" << std::endl;
 	return (0);
 }

@@ -12,12 +12,17 @@ int	main(void)
 	const WrongAnimal* wrongCat = new WrongCat();
 	const WrongCat* wrongCat2 = new WrongCat();
 
-	std::cout << std::endl << "***************** Actions *****************" << std::endl;
+	std::cout << std::endl << "***************** Types *****************" << std::endl;
+	std::cout << meta->getType() << " " << std::endl;
 	std::cout << j->getType() << " " << std::endl;
 	std::cout << i->getType() << " " << std::endl;
-	i->makeSound();
-	j->makeSound();
+	std::cout << wrongMeta->getType() << " " << std::endl;
+	std::cout << wrongCat->getType() << " " << std::endl;
+	std::cout << wrongCat2->getType() << " " << std::endl;
+	std::cout << std::endl << "***************** Actions *****************" << std::endl;
 	meta->makeSound();
+	j->makeSound();
+	i->makeSound();
 	wrongMeta->makeSound();
 	wrongCat->makeSound();
 	wrongCat2->makeSound();

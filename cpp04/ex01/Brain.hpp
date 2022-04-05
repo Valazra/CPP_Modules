@@ -8,7 +8,7 @@ class Brain
 	public :
 		Brain(void);
 		Brain(Brain const & src);
-		~Brain(void);
+		virtual ~Brain(void);
 
 		Brain & operator=(Brain const & rhs);
 

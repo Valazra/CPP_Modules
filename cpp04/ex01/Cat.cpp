@@ -17,14 +17,15 @@ Cat::Cat(Cat const & src)
 
 Cat::~Cat(void)
 {
-	std::cout << "Cat default destructor called" << std::endl;
 	delete _cat_brain;
+	std::cout << "Cat default destructor called" << std::endl;
 	return ;
 }
 
 Cat & Cat::operator=(Cat const & rhs)
 {
 	_type = rhs.getType();
+	_cat_brain = rhs._cat_brain;
 	return (*this);
 }
 

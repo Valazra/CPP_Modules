@@ -17,14 +17,16 @@ Dog::Dog(Dog const & src)
 
 Dog::~Dog(void)
 {
-	std::cout << "Dog default destructor called" << std::endl;
 	delete _dog_brain;
+	std::cout << "Dog default destructor called" << std::endl;
 	return ;
 }
 
 Dog & Dog::operator=(Dog const & rhs)
 {
 	_type = rhs.getType();
+	_dog_brain = rhs._dog_brain;
+	std::cout << "Dog assignement operator called" << std::endl;
 	return (*this);
 }
 

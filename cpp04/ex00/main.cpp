@@ -9,7 +9,8 @@ int	main(void)
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
 	const WrongAnimal* wrongMeta = new WrongAnimal();
-	const WrongAnimal* wrongI = new WrongCat();
+	const WrongAnimal* wrongCat = new WrongCat();
+	const WrongCat* wrongCat2 = new WrongCat();
 
 	std::cout << std::endl << "***************** Actions *****************" << std::endl;
 	std::cout << j->getType() << " " << std::endl;
@@ -18,13 +19,15 @@ int	main(void)
 	j->makeSound();
 	meta->makeSound();
 	wrongMeta->makeSound();
-	wrongI->makeSound();
+	wrongCat->makeSound();
+	wrongCat2->makeSound();
 
 	std::cout << std::endl << "***************** Destructors *****************" << std::endl;
 	delete meta;
 	delete j;
 	delete i;
 	delete wrongMeta;
-	delete wrongI;
+	delete wrongCat;
+	delete wrongCat2;
 	return (0);
 }

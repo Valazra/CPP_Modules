@@ -8,23 +8,25 @@ Dog::Dog(void)
 	return ;
 }
 
-Dog::Dog(Dog const & src)
+Dog::Dog(Dog const & src) : AAnimal(src)
 {
 	std::cout << "Dog copy constructor called" << std::endl;
-	*this = src;
+	this->_dog_brain = new Brain(*src._dog_brain);
 	return ;
 }
 
 Dog::~Dog(void)
 {
-	std::cout << "Dog default destructor called" << std::endl;
 	delete _dog_brain;
+	std::cout << "Dog default destructor called" << std::endl;
 	return ;
 }
 
 Dog & Dog::operator=(Dog const & rhs)
 {
-	_type = rhs.getType();
+	delete _dog_brain;
+	this->_type = rhs.getType();
+	_dog_brain = new Brain(*rhs._dog_brain);
 	return (*this);
 }
 
@@ -32,4 +34,9 @@ void	Dog::makeSound(void) const
 {
 	std::cout << "Ouaf ouaf" << std::endl;
 	return ;
+}
+
+Brain*	Dog::getBrain(void) const
+{
+	return (_dog_brain);
 }

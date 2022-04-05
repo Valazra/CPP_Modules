@@ -8,23 +8,25 @@ Cat::Cat(void)
 	return ;
 }
 
-Cat::Cat(Cat const & src)
+Cat::Cat(Cat const & src) : AAnimal(src)
 {
 	std::cout << "Cat copy constructor called" << std::endl;
-	*this = src;
+	this->_cat_brain = new Brain(*src._cat_brain);
 	return ;
 }
 
 Cat::~Cat(void)
 {
-	std::cout << "Cat default destructor called" << std::endl;
 	delete _cat_brain;
+	std::cout << "Cat default destructor called" << std::endl;
 	return ;
 }
 
 Cat & Cat::operator=(Cat const & rhs)
 {
-	_type = rhs.getType();
+	delete _cat_brain;
+	this->_type = rhs.getType();
+	_cat_brain = new Brain(*rhs._cat_brain);
 	return (*this);
 }
 

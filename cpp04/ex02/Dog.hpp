@@ -9,11 +9,12 @@ class Dog : public AAnimal
 	public :
 		Dog(void);
 		Dog(Dog const & src);
-		~Dog(void);
+		virtual ~Dog(void);
 
 		Dog & operator=(Dog const & rhs);
 
-		void makeSound(void) const;
+		void	makeSound(void) const;
+		Brain*	getBrain(void) const;
 
 	private :
 		Brain*	_dog_brain;

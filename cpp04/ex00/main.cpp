@@ -19,6 +19,7 @@ int	main(void)
 	std::cout << wrongMeta->getType() << " " << std::endl;
 	std::cout << wrongCat->getType() << " " << std::endl;
 	std::cout << wrongCat2->getType() << " " << std::endl;
+
 	std::cout << std::endl << "***************** Actions *****************" << std::endl;
 	meta->makeSound();
 	j->makeSound();

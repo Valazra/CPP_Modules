@@ -1,12 +1,12 @@
 NAME = ex00
 
-COMPILER = c++
+COMPILER = clang++
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-INCS =
+INCS = Convert.hpp
 
-SRCS = main.cpp
+SRCS = main.cpp Convert.cpp
 
 OBJ = $(SRCS:.cpp=.o)
 

@@ -12,6 +12,7 @@ int	main(void)
 		std::cout << nono;
 		Form formulaire1("Formulaire1", 25, 60);
 		std::cout << formulaire1;
+		Form formulaire2("Formulaire2", 153, 0);
 	
 		std::cout << std::endl << "*****************************************" << std::endl << std::endl;
 

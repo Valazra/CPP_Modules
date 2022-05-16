@@ -7,19 +7,33 @@ Form::Form(void) : _name("Default Form"), _signed(false), _grade_sign(150), _gra
 
 Form::Form(std::string name, int grade_sign, int grade_exec) : _name(name), _signed(false), _grade_sign(grade_sign), _grade_exec(grade_exec)
 {
-	if (grade_sign < 1 || grade_exec < 1)
-		throw Form::GradeTooHighException();
-	if (grade_sign > 150 || grade_exec > 150)
-		throw Form::GradeTooLowException();
+	try
+	{
+		if (grade_sign < 1 || grade_exec < 1)
+			throw Form::GradeTooHighException();
+		if (grade_sign > 150 || grade_exec > 150)
+			throw Form::GradeTooLowException();
+	}
+	catch (std::exception & e)
+	{
+		std::cout << e.what() << std::endl;
+	}
 	return ;
 }
 
 Form::Form(Form const & src) : _name(src.getName()), _signed(src.getSigned()), _grade_sign(src.getGradeSign()), _grade_exec(src.getGradeExec())
 {
-	if (_grade_sign < 1 || _grade_exec < 1)
-		throw Form::GradeTooHighException();
-	if (_grade_sign > 150 || _grade_exec > 150)
-		throw Form::GradeTooLowException();
+	try
+	{
+		if (_grade_sign < 1 || _grade_exec < 1)
+			throw Form::GradeTooHighException();
+		if (_grade_sign > 150 || _grade_exec > 150)
+			throw Form::GradeTooLowException();
+	}
+	catch (std::exception & e)
+	{
+		std::cout << e.what() << std::endl;
+	}
 	return ;
 }
 

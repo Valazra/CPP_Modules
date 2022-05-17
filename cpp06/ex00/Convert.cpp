@@ -133,63 +133,63 @@ void	Convert::convertChar(void)
 
 void	Convert::convertInt(void)
 {
-	long int li = strtol(_av1.c_str(), NULL, 10);
-	if (li < INT_MIN || li > INT_MAX)
+	double av1 = atof(_av1.c_str());
+	if (av1 < INT_MIN || av1 > INT_MAX)
 	{
 		std::cout << "Problem overflow or underflow" << std::endl;
 		return ;
 	}
 	std::cout << "char: ";
-	if (li < static_cast<int>(CHAR_MIN) || li > static_cast<int>(CHAR_MAX))
+	if (av1 < static_cast<int>(CHAR_MIN) || av1 > static_cast<int>(CHAR_MAX))
 		std::cout << "impossible" << std::endl;
 	else
 	{
-		char c = static_cast<char>(li);
+		char c = static_cast<char>(av1);
 		if (isprint(c))
 			std::cout << "'" << c << "'" << std::endl;
 		else
 			std::cout << "Non displayable" << std::endl;
 	}
-	std::cout << "int: " << li << std::endl;
+	std::cout << "int: " << static_cast<int>(av1) << std::endl;
 	std::cout << std::fixed;
-	std::cout << "float: " << static_cast<float>(li) << "f" << std::endl;
+	std::cout << "float: " << static_cast<float>(av1) << "f" << std::endl;
 	std::cout << std::fixed;
-	std::cout << "double: " << static_cast<double>(li) << std::endl;
+	std::cout << "double: " << av1 << std::endl;
 }
 
 void	Convert::convertFloat(void)
 {
-	float f = strtof(_av1.c_str(), NULL);
+	double av1 = atof(_av1.c_str());
 	if (errno == ERANGE)
 	{
 		std::cout << "Problem overflow or underflow" << std::endl;
 		return ;
 	}
 	std::cout << "char: ";
-	if (f < static_cast<float>(CHAR_MIN) || f > static_cast<float>(CHAR_MAX) || _av1 == "nanf")
+	if (av1 < static_cast<float>(CHAR_MIN) || av1 > static_cast<float>(CHAR_MAX) || _av1 == "nanf")
 		std::cout << "impossible" << std::endl;
 	else
 	{
-		char c = static_cast<char>(f);
+		char c = static_cast<char>(av1);
 		if (isprint(c))
 			std::cout << "'" << c << "'" << std::endl;
 		else
 			std::cout << "Non displayable" << std::endl;
 	}
 	std::cout << "int: ";
-	if (static_cast<long int>(f) < INT_MIN || static_cast<long int>(f) > INT_MAX || _av1 == "nanf")
+	if (static_cast<long int>(av1) < INT_MIN || static_cast<long int>(av1) > INT_MAX || _av1 == "nanf")
 		std::cout << "impossible" << std::endl;
 	else
-		std::cout << static_cast<int>(f) << std::endl;
+		std::cout << static_cast<int>(av1) << std::endl;
 	std::cout << std::fixed;
-	std::cout << "float: " << f << "f" << std::endl;
+	std::cout << "float: " << static_cast<float>(av1) << "f" << std::endl;
 	std::cout << std::fixed;
-	std::cout << "double: " << static_cast<double>(f) << std::endl;
+	std::cout << "double: " << av1 << std::endl;
 }
 
 void	Convert::convertDouble(void)
 {
-	double d = strtod(_av1.c_str(), NULL);
+	double d = atof(_av1.c_str());
 	if (errno == ERANGE)
 	{
 		std::cout << "Problem overflow or underflow" << std::endl;

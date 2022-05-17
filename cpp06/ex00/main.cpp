@@ -13,7 +13,7 @@ int	main(int ac, char **av)
 		if (av[1][0] == '\0')
 		{
 			std::cout << "Arg must not be empty" << std::endl;
-			return (0);
+			return (-1);
 		}
 		Convert av1(av[1]);
 		av1.convertType();

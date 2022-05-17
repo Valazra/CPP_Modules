@@ -14,4 +14,6 @@ int	main(void)
 	iter(char_tab, 3, print_value);
 	std::cout << "**********************************" << std::endl;
 	iter(string_tab, 3, print_value);
+
+	return (0);
 }

@@ -4,7 +4,7 @@
 # include <iostream>
 
 template < typename T >
-void	iter(T tab[], int sizeTab, void (*f)(T & value))
+void	iter(T tab[], int sizeTab, void (*f)(T const & value))
 {
 	for (int i = 0 ; i < sizeTab ; i++)
 		(f)(tab[i]);

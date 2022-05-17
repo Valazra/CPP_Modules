@@ -24,17 +24,26 @@ Base *generate(void)
 	return (NULL);
 }
 
-void	identify(Base *p)
+void	identify(Base* p)
 {
-	if (A *a = dynamic_cast<A*>(p))
+	A *a = dynamic_cast<A*>(p);
+	if (a == NULL)
+		;
+	else
 		std::cout << "Pointer : A" << std::endl;
-	if (B *b = dynamic_cast<B*>(p))
+	B *b = dynamic_cast<B*>(p);
+	if (b == NULL)	
+		;
+	else
 		std::cout << "Pointer : B" << std::endl;
-	if (C *c = dynamic_cast<C*>(p))
+	C *c = dynamic_cast<C*>(p);
+	if (c == NULL)
+		;
+	else
 		std::cout << "Pointer : C" << std::endl;
 }
 
-void	identify(Base &p)
+void	identify(Base& p)
 {
 	try
 	{
@@ -72,8 +81,8 @@ void	identify(Base &p)
 
 int	main(void)
 {
-	Base *tmp = generate();
-	identify(tmp);
-	identify(*tmp);
+	Base *p = generate();
+	identify(p);
+	identify(*p);
 	return (0);
 }

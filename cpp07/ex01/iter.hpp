@@ -11,7 +11,7 @@ void	iter(T tab[], int sizeTab, void (*f)(T const & value))
 }
 
 template < typename T >
-void	print_value(T & value)
+void	print_value(T const & value)
 {
 	std::cout << value << std::endl;
 }

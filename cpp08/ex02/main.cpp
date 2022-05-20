@@ -32,8 +32,8 @@ int main(void)
 	}
 
 	std::cout << std::endl << "********************************" << std::endl << std::endl;
-	
-/*	std::list<int> mstack;
+/*	
+	std::list<int> mstack;
 
 	mstack.push_back(5);
 	mstack.push_back(17);
@@ -59,9 +59,9 @@ int main(void)
 		std::cout << *it << std::endl;
 		++it;
 	}
-*/
-	std::cout << std::endl << "********************************" << std::endl << std::endl;
 
+	std::cout << std::endl << "********************************" << std::endl << std::endl;
+*/
 	MutantStack<std::string> string_stack;
 	
 	string_stack.push("Je");
